@@ -1,0 +1,9 @@
+.UserList{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.elementSelected{
+    border: 1px solid green;
+}

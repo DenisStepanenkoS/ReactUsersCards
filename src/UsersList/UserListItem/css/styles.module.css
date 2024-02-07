@@ -1,0 +1,47 @@
+
+.UserListItem{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    height: 75px;
+    width: 100%;
+    box-shadow: 0px 0px 5px rgba(0, 0,0,0.5);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.userImage{
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
+    border: 1px solid blue;
+}
+
+.trash{
+    color: grey;
+    font-size: 26px;
+    margin-left: auto;
+    margin-right: 20px;
+    flex: 0 0 26px;
+}
+
+.nameField{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.firstName, .lastName{
+    margin: 0px;
+}
+.lastName{
+    font-size: small;
+    color: grey;
+}
+
