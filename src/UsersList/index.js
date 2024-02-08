@@ -7,6 +7,11 @@ function UsersList({UsersInfo, setUsersInfo}){
     let currentTarget = null;
     let previousTarget = null;   
     
+    function removeUser(user){
+        const updateUsersInfo = UsersInfo.filter(userInfo => userInfo.id !== user.id);
+        setUsersInfo(updateUsersInfo);
+    }
+
     const elementSelected = (e) => {
         
         
@@ -24,7 +29,7 @@ function UsersList({UsersInfo, setUsersInfo}){
         
     return(
         <div onClick={elementSelected} className = {styles.UserList}>
-            {UsersInfo.map((user)=>(<UserListItem user={user} UsersInfo={UsersInfo} setUsersInfo={setUsersInfo} key={user.id}/>))}
+            {UsersInfo.map((user)=>(<UserListItem user={user} removeUser={removeUser} key={user.id}/>))}
         </div>
     );
 }
