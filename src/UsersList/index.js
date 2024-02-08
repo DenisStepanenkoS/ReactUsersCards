@@ -1,7 +1,9 @@
 import UserListItem from "./UserListItem/index";
 import styles from "./css/styles.module.css";
 import UserListItemStyles from "./UserListItem/css/styles.module.css";
-function UsersList({UsersInfo}){
+
+function UsersList({UsersInfo, setUsersInfo}){
+    
     let currentTarget = null;
     let previousTarget = null;   
     
@@ -19,11 +21,10 @@ function UsersList({UsersInfo}){
         previousTarget = currentTarget;
         
     }
-
         
     return(
         <div onClick={elementSelected} className = {styles.UserList}>
-            {UsersInfo.map(user=>(<UserListItem user={user} key={user.id}/>))}
+            {UsersInfo.map((user)=>(<UserListItem user={user} UsersInfo={UsersInfo} setUsersInfo={setUsersInfo} key={user.id}/>))}
         </div>
     );
 }

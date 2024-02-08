@@ -1,10 +1,11 @@
 import styles from "./css/styles.module.css";
 import { FaTrash } from "react-icons/fa";
 
-function UserListItem({user}){
+function UserListItem({user, UsersInfo,setUsersInfo}){
 
-    function removeClick(e){
-        e.target.closest('.'+styles.UserListItem).remove();
+    function removeUser(){
+        const updateUsersInfo = UsersInfo.filter(userInfo => userInfo.id !== user.id);
+        setUsersInfo(updateUsersInfo);
     }
 
     return(
@@ -14,7 +15,7 @@ function UserListItem({user}){
                 <p className={styles.firstName}>{user.firstName}</p>
                 <p className={styles.lastName}>{user.lastName}</p>
             </div>
-            <FaTrash onClick={removeClick} className={styles.trash}/>
+            <FaTrash onClick={removeUser}className={styles.trash}/>
             
         </div>
     );
